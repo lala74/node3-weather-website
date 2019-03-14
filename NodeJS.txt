@@ -190,3 +190,13 @@ our app run, we change make some changes in "package.json file"		|
 			var url = '/weather?address=' + location;				|
     		fetch(url).then((respond) => { }						|
 ---------------------------------------------------------------------
+
+
+****************** RESUME *******************************
+> git add .
+> git commit -m "Set up app for heroku"
+> git push
+
+> git remote		we can see that heroku are created another branch name "heroku" for us
+> git push heroku master
+*********************************************************
