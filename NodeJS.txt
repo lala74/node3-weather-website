@@ -4,11 +4,11 @@ https://controller.access.network/101/portal/
 
 
 *************************
-*	NODE.JS		*
+*	     NODE.JS		*
 *************************
 
 
-****************** DEBUGGER ***********8********
+****************** DEBUGGER *******************
 ------------------ Debug via command line ---------------------
 
 - Run in terminal to get access to debug environment
@@ -87,7 +87,7 @@ to store the value of property "label" of product to variable "myLabel" and valu
 
 
 *************************
-*	  GIT    	*
+*	       GIT    	    *
 *************************
 
 ------ How to integrate Git to your project at VS Code ? ------
@@ -98,6 +98,7 @@ to store the value of property "label" of product to variable "myLabel" and valu
 this command will initialize a .git folder that store everything about your project
 
 > git status	to get the status of all file in our project (Untracked Files, Unstagged Changes, Staged Changes, Commits)
+
 ------------------------------------------------------
 !! Attention : You don't want track node_module file in git
 - To ignore a file in our project, you have to create a file name ".gitignore"
@@ -113,11 +114,51 @@ this command will initialize a .git folder that store everything about your proj
 -----------------------------------------------
 - After modified and make changes to our file, we have some "modified file" that we need to add it to the stagged area
 > git add .
+> git commit -m "Modified something"
 
 
+***************** SSH (secured shell)***************************
+
+----------------- Set up SSH key -------------------------------
+> ls -a -l ~/.ssh		to looking for .ssh file in our project
+we are going to create a SSH key inside .ssh file
+
+> ssh-keygen -t rsa -b 4096 -C "laminhduc07041@gmail.com"		to generate ssh key
+-b is for the bit we want to use (4096 bits) the higher the bit are, the more secure you have
+-C is for comment, usually we want to add our email
+After you just hit enter with default configuration: file to save key, no passphrase
+
+We can use the command line up above to look into our ssh file 
+	* id_rsa is the private key file in our local machine, NOT SHARE TO ANYONE
+	* id_rsa.pub is public key that we want to share with GitHub or Heroku to secure the communication
+	between our machine and their servers
+
+> eval "$(ssh-agent -s)"	to register our new private key file
+> ssh-add ~/.ssh/id_rsa		to register the key to these id_rsa files 
 
 
+*************************
+*	     GITHUB 	    *
+*************************
 
+> git remote add origin https://github.com/lala74/node3-weather-website.git
+to create a new line of communication between your code and GitHub repositoty
+You can imagine that is like adding a new contact to your mobile phone
+	* origin is the name of the contact
+	* https://github.com/lala74/node3-weather-website.git is phone number
+
+We need set up a new SSH key in your GitHub account to be able to push our code to GitHub
+-> github.com -> setting -> SSH and GPG keys -> new SSH keys
+	* Title: Home Laptop
+	* Key : content in > cat ~/.ssh/id_rsa.pub
+-> Add new keys
+
+To test if our key has been setup successfully
+> ssh -T git@github.com 	and then type yes
+
+
+> git push -u origin master
+to push our code to the GitHub repositoty
 
 
 
