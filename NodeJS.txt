@@ -97,14 +97,22 @@ to store the value of property "label" of product to variable "myLabel" and valu
 > git init	to initialize git in our project
 this command will initialize a .git folder that store everything about your project
 
+> git status	to get the status of all file in our project (Untracked Files, Unstagged Changes, Staged Changes, Commits)
 ------------------------------------------------------
 !! Attention : You don't want track node_module file in git
 - To ignore a file in our project, you have to create a file name ".gitignore"
 - In this file, we can write node_modules/ to ignore node_module in the futur
 ------------------------------------------------------
 
-> git add src/		will add all files in src/ folder to the staging area
-> git add .		will add all untrack file which show up in git status command line
+> git add src/		will add all files in src/ folder to the stagged area
+> git add .		will add all untracked files which show up in git status command line
+
+> git commit -m "Init commit"	commit all files in stagged area to git cloud
+
+
+-----------------------------------------------
+- After modified and make changes to our file, we have some "modified file" that we need to add it to the stagged area
+> git add .
 
 
 
