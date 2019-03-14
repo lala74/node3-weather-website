@@ -1,0 +1,117 @@
+https://shibboleth.insa-cvl.fr/idp/Authn/UserPassword
+https://controller.access.network/101/portal/
+
+
+
+*************************
+*	NODE.JS		*
+*************************
+
+
+****************** DEBUGGER ***********8********
+------------------ Debug via command line ---------------------
+
+- Run in terminal to get access to debug environment
+> node inspect FILENAME.js 		OR
+> nodemon inspect FILENAME.js		RECOMMENDED !!!
+> n		execute next line code
+> c		execute all the line code below
+
+- If we want to stop and see value of variable at someline
+> repl
+> VARIABLE
+
+- If we dont want to use n to go a line specified, write "debugger;" above
+the line we want to stop in debug
+> node inspect FILENAME.js
+> c
+and the debug will stop at debugger
+
+
+------------------ Debug via Chrome tools ---------------------
+		   RECOMMENDED !!!!
+
+> node --inspect-brk FILENAME.js	OR
+> nodemon --inspect-brk FILENAME.js	RECOMMENDED !!!
+Debugger listening on ws://127.0.0.1:9229/3982861c-0661-4bcf-8eba-ded08ea9c002
+
+- Then we will go to chrome, type chrome://inspect and hit Enter
+(chrome://version for more info about the version of your Chrome)
+- Under Remote Target, we should have one target, that is our target of debugging (we dont want to click that)
+- We click "Open dedicated DevTools for Node"
+
+- The console bar (at the end) is like repl (we can run our code here)
+- 
+
+
+****************** NOTION OF NODE.JS ********************
+
+------------------ Synchronous -------------------------
+- One line run after the next
+
+------------------ Event driven -------------------------
+
+------------------ Non blocking -------------------------
+- The application can do other thing while waiting a long running process to complete
+
+------------------ Single threaded -------------------------
+
+------------------ Call Stack -------------------------
+- Running function in our main()
+
+- The job of call satck is to track the execution of our program and is does that by keeping track of all of the functions that are currently running
+
+- Tennis ball structure data: You can add something onto the top of the list and you can remove the top item
+--- But you cant remove or add something at the middle, or the bottom of the tennis ball can.
+
+------------------ Callback Queue  -------------------------
+- Callback Queue is a strandard line, you add function at the end of the line and the function at the front of the line will be executed first (like a queue of people at fastfood store - KFC)
+
+- The function of Callback Queue is maintain a list of function is already to execute (functions in Node APIs)
+
+
+------------------ Event Loop -------------------------
+- The function of Event Loop is to look at the Call Stack and the Callback Queue. If the Call Stack is empty, the functions in Callback Queue will be added to Call Stack and be executed.
+---- Call Stack > Callback Queue
+
+
+------------------ Object Property Shorthand -------------------------
+- If an object has the name of value of property is exactly the same name of property, we can just erase the property name
+> user = {name: name} can be transform to 
+> user = {name}
+
+------------------ Destructuring -------------------------
+- If we want to store the value of some properties of an object, we can use destructuring like:
+> {label:myLabel, stock} = product;
+to store the value of property "label" of product to variable "myLabel" and value of property "stock" of product to variable "stock"
+
+
+*************************
+*	  GIT    	*
+*************************
+
+------ How to integrate Git to your project at VS Code ? ------
+
+- We need to run the command line at the root project folder which is "web server"
+
+> git init	to initialize git in our project
+this command will initialize a .git folder that store everything about your project
+
+------------------------------------------------------
+!! Attention : You don't want track node_module file in git
+- To ignore a file in our project, you have to create a file name ".gitignore"
+- In this file, we can write node_modules/ to ignore node_module in the futur
+------------------------------------------------------
+
+> git add src/		will add all files in src/ folder to the staging area
+> git add .		will add all untrack file which show up in git status command line
+
+
+
+
+
+
+
+
+
+
