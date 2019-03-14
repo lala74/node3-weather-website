@@ -160,7 +160,33 @@ To test if our key has been setup successfully
 > git push -u origin master
 to push our code to the GitHub repositoty
 
+*************************
+*	     HEROKU 	    *
+*************************
 
+> heroku keys:add		to add ssh key to heroku account
 
+> heroku create la-weather-application			to create new application in heroku server
+and heroku will give to us 2 URLs:
+	* the first one is live URL to our app 
+	* the second one is URL for git repository that we should push our code in
 
-
+--------------------------------------------------------------------- 
+!!! ATTENTION: to get heroku know which file to execute to make 	|
+our app run, we change make some changes in "package.json file"		|
+	- We can remove "test" line in "scripts" and add our scripts	|
+	- Add "start" object to "scripts":								|		
+		 	"scripts": {											|
+   				 "start" : "node src/app.js"						|
+  			},														|
+	(Now we can use > npm run start 	to run our app)				|
+	- We have to change "app.listen()" at "app.js"					|
+			const port = process.env.PORT || 3000;					|
+			app.listen(port, () => {								|
+    			console.log('Server is up on port ' + port);		|
+			});														|
+	- Now the final change in in client side: public/js/app.js		|
+		- We need clear localhost::3000 in "url" variable:			|
+			var url = '/weather?address=' + location;				|
+    		fetch(url).then((respond) => { }						|
+---------------------------------------------------------------------
