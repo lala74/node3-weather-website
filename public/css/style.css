@@ -64,3 +64,11 @@ button {
     color: white;
     padding: 8px;
 }
+
+#message-1 {
+    font-weight: bold;
+}
+
+#message-2 {
+    font-weight: bold;
+}

@@ -11,8 +11,9 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             summary = body.daily.data[0].summary;
             currTemp = body.currently.temperature;
+            humidity = body.currently.humidity * 100;
             currChanceRain = body.currently.precipProbability;
-            data = `${summary} It is currently ${currTemp} degrees out. There is a ${currChanceRain}% chance of rain.`;
+            data = `${summary} It is currently ${currTemp} degrees out and the humidity is ${humidity}%. There is a ${currChanceRain}% chance of rain.`;
             callback(undefined, data);
         }
         
