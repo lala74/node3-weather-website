@@ -1,0 +1,20 @@
+https://shibboleth.insa-cvl.fr/idp/Authn/UserPassword
+https://controller.access.network/101/portal/
+
+
+
+*************************
+*	     NODE.JS		*
+*************************
+
+----- Modified package.json ----------
+For NodeMon
+    "dev" : "nodemon src/app.js -e js,hbs"
+
+- We need uninstall nodemon in global module and install it in local module so that
+everyone have our code can make it run smooth
+> npm uninstall -g nodemon              to uninstall nodemon
+
+> npm install nodemon --save-dev        to install nodemon at DevDependencies
+- When some extensions are installed in DevDependencies, they will be not installed in
+our product environment 
