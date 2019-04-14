@@ -162,7 +162,7 @@ to push our code to the GitHub repositoty
 
 *************************
 *	     HEROKU 	    *
-*************************
+************************* 
 
 > heroku keys:add		to add ssh key to heroku account
 
